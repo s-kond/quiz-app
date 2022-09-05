@@ -34,7 +34,7 @@ h1 {
 }
 
 .question-card:last-of-type {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .question {
@@ -90,7 +90,7 @@ h1 {
     width: 400px;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: antiquewhite;
     padding: 0;
     border-radius: 10px;
@@ -111,7 +111,12 @@ h1 {
     color: black;
 }
 
-img {
+.nav-list img {
+    width: 40px;
+    height: 40px;
+}
+
+.profile-img {
     height: 150px;
     width: 150px;
 }
