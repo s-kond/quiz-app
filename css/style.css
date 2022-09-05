@@ -110,6 +110,11 @@ h1 {
     background-color: lightblue;
 }
 
+.nav-list > li:active {
+    background-clip: padding-box;
+    background-color: lightblue;
+}
+
 .nav-list a {
     text-decoration: none;
     font-weight: bold;
