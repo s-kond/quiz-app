@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app-container {
+    width: 400px;
+    margin: auto;
+}
+
+header {
+    background-color: antiquewhite;
+    position: sticky;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.question-card {
+    position: relative;
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.question-card:last-of-type {
+    margin-bottom: 80px;
+}
+
+.question {
+    text-align: center;
+    padding: 5px;
+}
+
+.answer {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.hashtag-box-list {
+    list-style: none;
+    display: inline-flex;
+    margin: 25px 10px 10px 10px;
+    padding: 0;
+}
+
+.hashtag-box-list > li {
+    display: inline;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.bookmark {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.nav-list {
+    position: fixed;
+    bottom: 0;
+    width: 400px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 0;
+}
+
+.nav-list > li {
+    padding: 10px;
+}
+
+.nav-list > li:hover {
+    background-clip: padding-box;
+    background-color: lightblue;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
