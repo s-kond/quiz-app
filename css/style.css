@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+.app-container {
+    width: 400px;
+    margin: auto;
+}
+
+header {
+    background-color: antiquewhite;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
