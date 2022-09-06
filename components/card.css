@@ -25,13 +25,25 @@
 
 .card__answer-btn {
     text-align: center;
-    margin: 0 auto;
-    width: 80%;
-    padding: 20px;
+    font-size: medium;
+    margin: 1em auto;
+    width: 60%;
+    padding: 15px;
     border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px;
 }
 
-.card__hidden-answer {
+.card__answer-btn:hover {
+    box-shadow: 2px 2px;
+}
+
+.card__answer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hidden {
     display: none;
 }
 
