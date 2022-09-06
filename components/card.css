@@ -1,0 +1,64 @@
+.card {
+    position: relative;
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px;
+    padding: 20px;
+}
+
+.card:last-of-type {
+    margin-bottom: 100px;
+}
+
+.card__question {
+    text-align: center;
+    padding: 5px;
+}
+
+.card__btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card__answer-btn {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.card__hidden-answer {
+    display: none;
+}
+
+.card__hashtag-box-list {
+    list-style: none;
+    display: inline-flex;
+    margin: 25px 10px 10px 10px;
+    padding: 0;
+}
+
+.card__hashtag-box-list > li {
+    display: inline;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.card__bookmark {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: -10px;
+    right: 20px;
+}
+
+.card__bookmark img {
+    width: 40px;
+    height: 40px;
+}

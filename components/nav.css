@@ -1,0 +1,36 @@
+.nav-list {
+    position: fixed;
+    bottom: 0;
+    width: 400px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+    padding: 0;
+    border-radius: 10px;
+}
+
+.nav-list > li {
+    padding: 10px;
+}
+
+.nav-list > li:hover {
+    background-clip: padding-box;
+    background-color: var(--secondary-color);
+}
+
+.nav-list > li:active {
+    background-clip: padding-box;
+    background-color: var(--secondary-color);
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.nav-list img {
+    width: 40px;
+    height: 40px;
+}
