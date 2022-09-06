@@ -1,0 +1,25 @@
+@import url(./components/card.css);
+@import url(./components/nav.css);
+@import url(./components/profile-main.css);
+@import url(./components/header.css);
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: antiquewhite;
+    --secondary-color: lightblue;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app-container {
+    width: 400px;
+    margin: auto;
+}
+
+
