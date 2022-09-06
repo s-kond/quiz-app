@@ -1,11 +1,13 @@
-const answerBtn = document.querySelector(".card__answer-btn");
-const answer = document.querySelector('[data-js="hidden"]');
+const answerButtons = document.querySelectorAll('[data-js="answerButton"]');
+const answer = document.querySelectorAll('[data-js="hidden"]');
 
-answerBtn.addEventListener('click', () => {
-    answer.classList.toggle("hidden");
-    if (answerBtn.innerHTML === "Show answer") {
-        answerBtn.innerHTML = "Hide answer";
-    } else {
-        answerBtn.innerHTML = "Show answer";
-    }
-})
+for (let i=0; i<answerButtons.length; i++) {
+    answerButtons[i].addEventListener('click', () => {
+        answer[i].classList.toggle("hidden");
+        if (answerButtons[i].innerHTML === "Show answer") {
+            answerButtons[i].innerHTML = "Hide answer";
+        } else {
+            answerButtons[i].innerHTML = "Show answer";
+        }
+    })
+}
