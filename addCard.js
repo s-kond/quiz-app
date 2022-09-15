@@ -47,7 +47,34 @@ formNewCard.addEventListener('submit', event => {
 
     newTaglist.append(newListItem);
 
-    newCard.append(newQuestion, newButtonContainer, newAnswer, newTaglist);
+    const newBookmark = document.createElement('button');
+    newBookmark.classList.add("card__bookmark");
+    newBookmark.setAttribute("type", "button");
+    newBookmark.setAttribute("aria-label", "set bookmark");
+
+    const newBookmarkIcon = document.createElement('img');
+    newBookmarkIcon.setAttribute("src", "./assets/icons/bookmark-svgrepo-com.svg");
+    newBookmarkIcon.setAttribute("data-js", "card-bookmark");
+    newBookmarkIcon.setAttribute("alt", "bookmark");
+
+    const newBookmarkIcon2 = document.createElement('img');
+    newBookmarkIcon2.classList.add("hidden");
+    newBookmarkIcon2.setAttribute("src", "./assets/icons/bookmark-svgrepo-com (1).svg");
+    newBookmarkIcon2.setAttribute("data-js", "card-bookmark2");
+    newBookmarkIcon2.setAttribute("alt", "bookmark");
+
+    newBookmarkIcon.addEventListener('click', () => {
+        newBookmarkIcon.classList.toggle("hidden");
+        newBookmarkIcon2.classList.toggle("hidden");
+    })
+    newBookmarkIcon2.addEventListener('click', () => {
+        newBookmarkIcon.classList.toggle("hidden");
+        newBookmarkIcon2.classList.toggle("hidden");
+    })
+
+    newBookmark.append(newBookmarkIcon, newBookmarkIcon2);
+
+    newCard.append(newQuestion, newButtonContainer, newAnswer, newTaglist, newBookmark);
     cardContainer.append(newCard);
 
     event.target.reset();
