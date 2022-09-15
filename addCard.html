@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="app-container">
+    <header>
+        <h1>Quiz App</h1>
+    </header>
+    <form class="add-card" data-js="form-new-card">
+        <h2>Add a new Card</h2>
+        <label for="newQuestion">Your question:</label>
+        <textarea class="add-card__question" name="newQuestion" id="newQuestion" data-js="newQuestionInput" cols="30" rows="5" placeholder="max. 150 letters" maxlength="150" required></textarea>
+        <p data-js="questionCounter"></p>
+
+        <label for="newAnswer" class="add-card-gap">Your answer:</label>
+        <textarea class="add-card__answer" name="newAnswer" id="newAnswer" data-js="newAnswerInput" cols="30" rows="5" placeholder="max. 150 letters" maxlength="150" required></textarea>
+        <p data-js="answerCounter"></p>
+
+        <label for="newHashtag" class="add-card-gap">Tag:</label>
+        <input type="text" maxlength="20" name="newTag" placeholder="optional"><br>
+        <button type="submit">Create Card</button>
+    </form>
+    <div class="container-cards" data-js="card-container"></div>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-list__item"><a href="./index.html" data-js="listItem"><img src="./assets/icons/home-svgrepo-com.svg" alt="Homebutton"></a></li>
+            <li class="nav-list__item"><a href="./bookmarks.html" data-js="listItem"><img src="./assets/icons/bookmark-svgrepo-com (1).svg" alt="Go to your bookmarks button"></a></li>
+            <li class="nav-list__item"><a href="./addCard.html" data-js="listItem"><img src="./assets/icons/add-svgrepo-com.svg" alt="Go to profile button"> </a></li>
+            <li class="nav-list__item"><a href="./profile.html" data-js="listItem"><img src="./assets/icons/profile-user-svgrepo-com.svg" alt="Go to profile button"> </a></li>
+        </ul>
+    </nav>
+</main>
+<script src="./app.js" async></script>
+</body>
+</html>

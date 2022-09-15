@@ -75,3 +75,34 @@
     width: 40px;
     height: 40px;
 }
+
+.add-card {
+        position: relative;
+        text-align: center;
+        width: 80%;
+        margin: 30px auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px;
+        padding: 20px;
+}
+
+.add-card textarea {
+    margin-top: 5px;
+}
+
+.add-card-gap {
+    margin-top: 16px;
+}
+
+.add-card p {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.add-card button {
+    margin-top: 16px;
+}
