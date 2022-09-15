@@ -4,9 +4,15 @@
     margin: 30px auto;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 1px 1px 2px;
+    box-shadow: 1px 3px 3px;
     padding: 20px;
+    animation: blob-animation 0.3s;
+    transition: ease-out;
 }
+
+/* .card:hover {
+    animation: shake-animation 0.3s;
+} */
 
 .card:last-of-type {
     margin-bottom: 100px;
@@ -33,10 +39,11 @@
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 1px 1px;
+    transition: 0.2s ease;
 }
 
 .card__answer-btn:hover {
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px 3px;
 }
 
 .card__answer {
@@ -75,3 +82,63 @@
     width: 40px;
     height: 40px;
 }
+
+.add-card {
+        position: relative;
+        text-align: center;
+        width: 80%;
+        margin: 30px auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px;
+        padding: 20px;
+}
+
+.add-card textarea {
+    margin-top: 5px;
+}
+
+.add-card-gap {
+    margin-top: 16px;
+}
+
+.add-card p {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.add-card button {
+    margin-top: 16px;
+}
+
+@keyframes blob-animation {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    30%{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* 
+@keyframes shake-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    66%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+} */
