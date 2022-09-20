@@ -22,8 +22,10 @@
         <textarea class="add-card__answer" name="newAnswer" id="newAnswer" data-js="newAnswerInput" cols="30" rows="5" placeholder="max. 150 letters" maxlength="150" required></textarea>
         <p data-js="answerCounter"></p>
 
-        <label for="newHashtag" class="add-card-gap">Tag:</label>
-        <input type="text" maxlength="20" name="newTag" placeholder="optional"><br>
+        <label for="newHashtag" class="add-card-gap">Tags:</label><br>
+        <input type="text" maxlength="20" name="newTag" placeholder="optional" data-js="tag">
+        <button type="button" data-js="newTagButton">+</button> <br>
+
         <button type="submit">Create Card</button>
     </form>
     <div class="container-cards" data-js="card-container"></div>
@@ -36,6 +38,6 @@
         </ul>
     </nav>
 </main>
-<script src="./addCard.js" async></script>
+<script src="./app.js" type="module"></script>
 </body>
 </html>
