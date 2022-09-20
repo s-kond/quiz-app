@@ -17,7 +17,7 @@ function toggleAnswer(){
     }
 };
     
-    //bookmark logic
+//bookmark logic
 function toggleBookmark() {
     const bookmark = document.querySelector('[data-js="card-bookmark"]');
     const bookmarkChecked = document.querySelector('[data-js="card-bookmark2"]');
