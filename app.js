@@ -1,30 +1,24 @@
-//answerButtons 
+import { letterCounter, createCard, newTag } from "./utils/addCard.js";
+import { toggleAnswer, toggleBookmark } from "./utils/cardFunctionality.js"
 
-const answerButtons = document.querySelectorAll('[data-js="answerButton"]');
-const answer = document.querySelectorAll('[data-js="hidden"]');
-
-for (let i=0; i<answerButtons.length; i++) {
-    answerButtons[i].addEventListener('click', () => {
-        answer[i].classList.toggle("hidden");
-        if (answerButtons[i].textContent === "Show answer") {
-            answerButtons[i].textContent = "Hide answer";
-        } else {
-            answerButtons[i].textContent = "Show answer";
-        }
-    })
+//Beim Laden der Home-Seite:
+if (document.querySelector('[data-js="form-question"]')){
+    toggleAnswer();
+    toggleBookmark();
 }
 
-//bookmark logic
+//Beim Laden der Add-Seite:
+if (document.querySelector('[data-js="form-new-card"]')){
+    newTag();
+    letterCounter();
+    createCard();
+}
+/* const search = document.querySelector('[data-js="input-search"]');
 
-const bookmark = document.querySelector('[data-js="card-bookmark"]');
-const bookmarkChecked = document.querySelector('[data-js="card-bookmark2"]');
+search.addEventListener('input', () => {
+    const cards = document.querySelectorAll('[data-js="card"]');
+    const result = cards.filter(card => {
+        return card.ul.li === search.value;
+    })
 
-bookmark.addEventListener('click', () => {
-    bookmark.classList.toggle("hidden");
-    bookmarkChecked.classList.toggle("hidden");
-})
-bookmarkChecked.addEventListener('click', () => {
-    bookmark.classList.toggle("hidden");
-    bookmarkChecked.classList.toggle("hidden");
-})
-
+}) */

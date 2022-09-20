@@ -1,6 +1,43 @@
+import { toggleAnswer, toggleBookmark } from "./cardFunctionality.js";
+export { letterCounter, createCard, newTag }
+
+function newTag() {
+    const newTagButton = document.querySelector('[data-js="newTagButton"]');
+    let counter = 1;
+    newTagButton.addEventListener('click', event => {
+        event.preventDefault();
+        const newInput = document.createElement('input');
+        newInput.classList.add("newTagInput");
+        newInput.setAttribute("name", `newTag${counter}`);
+        newInput.setAttribute("data-js", "tag")
+        counter++;
+        console.log(counter);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = " - ";
+        deleteButton.setAttribute('data-js', "delete-button");
+        deleteButton.addEventListener('click', event => {
+            event.preventDefault();
+            newInput.remove();
+            deleteButton.remove();
+        })
+        
+        newTagButton.insertAdjacentElement('afterend', deleteButton);
+        newTagButton.insertAdjacentElement('afterend', newInput);
+    })
+};
+
+function deleteNewTags(){
+    const newInputs = document.querySelectorAll(".newTagInput");
+    newInputs.forEach(input => input.remove());
+    const deleteButtons = document.querySelectorAll('[data-js="delete-button"]');
+    deleteButtons.forEach(btn => btn.remove());
+}
+
 //addNewCards
+function createCard(){
 const formNewCard = document.querySelector('[data-js="form-new-card"]');
-const cardContainer = document.querySelector('[data-js="card-container"]')
+const cardContainer = document.querySelector('[data-js="card-container"]');
 
 formNewCard.addEventListener('submit', event => {
     event.preventDefault();
@@ -30,22 +67,18 @@ formNewCard.addEventListener('submit', event => {
     newAnswer.setAttribute("data-js", "hidden");
     newAnswer.innerText = data.newAnswer;
 
-    newButton.addEventListener('click', () => {
-        newAnswer.classList.toggle("hidden");
-        if (newButton.textContent === "Show answer") {
-            newButton.textContent = "Hide answer";
-        } else {
-            newButton.textContent = "Show answer";
-       }
-    })
-
     const newTaglist = document.createElement('ul');
     newTaglist.classList.add("card__hashtag-box-list");
     
-    const newListItem = document.createElement('li');
-    newListItem.innerText = `#${data.newTag}`;
+    const tagArray = document.querySelectorAll('[data-js="tag"]');
+    console.log(tagArray);
+    tagArray.forEach(tag => {
+        const newListItem = document.createElement('li');
+        newListItem.innerText = `#${tag.value}`;
+        newTaglist.append(newListItem);
+    })
 
-    newTaglist.append(newListItem);
+   
 
     const newBookmark = document.createElement('button');
     newBookmark.classList.add("card__bookmark");
@@ -63,26 +96,24 @@ formNewCard.addEventListener('submit', event => {
     newBookmarkIcon2.setAttribute("data-js", "card-bookmark2");
     newBookmarkIcon2.setAttribute("alt", "bookmark");
 
-    newBookmarkIcon.addEventListener('click', () => {
-        newBookmarkIcon.classList.toggle("hidden");
-        newBookmarkIcon2.classList.toggle("hidden");
-    })
-    newBookmarkIcon2.addEventListener('click', () => {
-        newBookmarkIcon.classList.toggle("hidden");
-        newBookmarkIcon2.classList.toggle("hidden");
-    })
-
     newBookmark.append(newBookmarkIcon, newBookmarkIcon2);
 
     newCard.append(newQuestion, newButtonContainer, newAnswer, newTaglist, newBookmark);
     cardContainer.append(newCard);
 
+    deleteNewTags();
     event.target.reset();
     event.target.elements.newQuestion.focus();
+
+    toggleAnswer();
+    toggleBookmark();
 })
+}
+
 
 // count letters in input-fields
 
+function letterCounter(){
 const letterCountQuestion = document.querySelector('[data-js="questionCounter"]');
 const letterCountAnswer = document.querySelector('[data-js="answerCounter"]');
 const questionInput = document.querySelector('[data-js="newQuestionInput"]'); 
@@ -98,3 +129,4 @@ answerInput.addEventListener('input', ()=> {
     let inputLetters = 150 - answerInput.value.length;
     letterCountAnswer.innerText = `${inputLetters} letters left.`
 })
+}

@@ -12,8 +12,12 @@
     <header>
         <h1>Quiz App</h1>
     </header>
+    <form action="" data-js="form-question">
+        <input type="text" placeholder="Search cards" data-js="input-search">
+        <button type="submit">Search</button>
+    </form>
     <div class="container-cards" data-js="card-container">
-    <section class="card">
+    <section class="card" data-js="card">
         <h2 class="card__question">What property flips the axes in flexbox?</h2>
         <div class="card__btn-container"><button class="card__answer-btn" data-js="answerButton">Show answer</button></div>
         <div class="card__answer hidden" data-js="hidden">flex-direction</div>
@@ -34,6 +38,6 @@
         </ul>
     </nav>
 </main>
-<script src="./app.js" async></script>
+<script src="./app.js" type="module"></script>
 </body>
 </html>

@@ -58,6 +58,9 @@
 .card__hashtag-box-list {
     list-style: none;
     display: inline-flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 10px;
     margin: 25px 10px 10px 10px;
     padding: 0;
 }

@@ -2,6 +2,7 @@
 @import url(./components/nav.css);
 @import url(./components/profile-main.css);
 @import url(./components/header.css);
+@import url(./components/addCard.css);
 
 * {
     box-sizing: border-box;
