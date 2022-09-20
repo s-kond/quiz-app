@@ -1,4 +1,3 @@
-import { toggleAnswer, toggleBookmark } from "./cardFunctionality.js";
 export { letterCounter, createCard, newTag }
 
 function newTag() {
@@ -67,6 +66,15 @@ formNewCard.addEventListener('submit', event => {
     newAnswer.setAttribute("data-js", "hidden");
     newAnswer.innerText = data.newAnswer;
 
+    newButton.addEventListener('click', () => {
+        newAnswer.classList.toggle("hidden");
+        if (newButton.textContent === "Show answer") {
+            newButton.textContent = "Hide answer";
+        } else {
+            newButton.textContent = "Show answer";
+        }
+    })
+
     const newTaglist = document.createElement('ul');
     newTaglist.classList.add("card__hashtag-box-list");
     
@@ -78,8 +86,6 @@ formNewCard.addEventListener('submit', event => {
         newTaglist.append(newListItem);
     })
 
-   
-
     const newBookmark = document.createElement('button');
     newBookmark.classList.add("card__bookmark");
     newBookmark.setAttribute("type", "button");
@@ -89,12 +95,22 @@ formNewCard.addEventListener('submit', event => {
     newBookmarkIcon.setAttribute("src", "./assets/icons/bookmark-svgrepo-com.svg");
     newBookmarkIcon.setAttribute("data-js", "card-bookmark");
     newBookmarkIcon.setAttribute("alt", "bookmark");
+    
+    newBookmarkIcon.addEventListener('click', () => {
+        newBookmarkIcon.classList.toggle("hidden");
+        newBookmarkIcon2.classList.toggle("hidden");
+    })
 
     const newBookmarkIcon2 = document.createElement('img');
     newBookmarkIcon2.classList.add("hidden");
     newBookmarkIcon2.setAttribute("src", "./assets/icons/bookmark-svgrepo-com (1).svg");
     newBookmarkIcon2.setAttribute("data-js", "card-bookmark2");
     newBookmarkIcon2.setAttribute("alt", "bookmark");
+
+    newBookmarkIcon2.addEventListener('click', () => {
+        newBookmarkIcon.classList.toggle("hidden");
+        newBookmarkIcon2.classList.toggle("hidden");
+    })
 
     newBookmark.append(newBookmarkIcon, newBookmarkIcon2);
 
@@ -104,9 +120,6 @@ formNewCard.addEventListener('submit', event => {
     deleteNewTags();
     event.target.reset();
     event.target.elements.newQuestion.focus();
-
-    toggleAnswer();
-    toggleBookmark();
 })
 }
 
