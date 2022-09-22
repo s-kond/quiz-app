@@ -1,6 +1,6 @@
 .card {
     position: relative;
-    width: 80%;
+    width: 320px;
     margin: 30px auto;
     border: 1px solid black;
     border-radius: 10px;
@@ -14,8 +14,14 @@
     animation: shake-animation 0.3s;
 } */
 
-.card:last-of-type {
+.card:nth-last-of-type(1) {
     margin-bottom: 100px;
+}
+
+@media (min-width: 1000px) {
+    .card:nth-last-of-type(2) {
+        margin-bottom: 100px;
+    }
 }
 
 .card__question {

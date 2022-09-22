@@ -1,11 +1,18 @@
 header {
+    margin: 0 auto;
     background-color: var(--primary-color);
-    position: sticky;
     border-radius: 10px;
     z-index: 5;
+    width: 400px;
 }
 
 h1 {
     text-align: center;
     padding: 10px;
+}
+
+@media (min-width: 1000px){
+    header {
+        width: 100%;
+    }
 }
