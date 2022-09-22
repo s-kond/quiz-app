@@ -19,8 +19,20 @@ body {
 }
 
 .app-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    z-index: -1;
+}
+
+.all-container {
     width: 400px;
     margin: auto;
 }
 
-
+@media (min-width: 1000px){
+    .all-container {
+        width: 800px;
+    }
+}
